@@ -34,9 +34,9 @@ const App = () => {
          <Route
           path="/search"
           element={
-            <>
-              Search Page
-            </>
+            <Layout>
+            Search Page
+          </Layout>
           }
         />
       {/* <Routes>
