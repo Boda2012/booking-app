@@ -2,7 +2,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
-// import userRoutes from "./routes/users";
+import userRoutes from "./routes/users";
 // import authRoutes from "./routes/auth";
 // import cookieParser from "cookie-parser";
 // import path from "path";
@@ -34,7 +34,7 @@ app.use(cors())
 // app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 // app.use("/api/auth", authRoutes);
-// app.use("/api/users", userRoutes);
+app.use("/api/users", userRoutes);
 // app.use("/api/my-hotels", myHotelRoutes);
 // app.use("/api/hotels", hotelRoutes);
 // app.use("/api/my-bookings", bookingRoutes);
@@ -42,10 +42,10 @@ app.use(cors())
 // app.get("*", (req: Request, res: Response) => {
 //   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 // });
-app.get("/api/test", async (req: Request, res: Response) => {
-    res.json({message: "It is a      L i v e ! ! ! api/test endpoint"});
+// app.get("/api/test", async (req: Request, res: Response) => {
+//     res.json({message: "It is a      L i v e ! ! ! api/test endpoint"});
     
-})
+// })
 
 app.listen(7000, () => {
   console.log("server running on localhost:7000");
