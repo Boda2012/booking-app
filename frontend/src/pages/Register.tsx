@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-// import { useMutation, useQueryClient } from "react-query";
-// import * as apiClient from "../api-client";
+import { useMutation } from "react-query";
+// , useQueryClient
+import * as apiClient from "../api-client";
 // import { useAppContext } from "../contexts/AppContext";
 // import { useNavigate } from "react-router-dom";
 
@@ -24,21 +25,24 @@ const Register = () => {
     formState: { errors },
   } = useForm<RegisterFormData>();
 
-//   const mutation = useMutation(apiClient.register, {
-//     onSuccess: async () => {
-//       showToast({ message: "Registration Success!", type: "SUCCESS" });
-//       await queryClient.invalidateQueries("validateToken");
-//       navigate("/");
-//     },
-//     onError: (error: Error) => {
-//       showToast({ message: error.message, type: "ERROR" });
-//     },
-//   });
+  const mutation = useMutation(apiClient.register, {
+    onSuccess: async () => {
+        console.log("registration successuful");
+        
+    //   showToast({ message: "Registration Success!", type: "SUCCESS" });
+    //   await queryClient.invalidateQueries("validateToken");
+    //   navigate("/");
+    },
+    onError: (error: Error) => {
+    //   showToast({ message: error.message, type: "ERROR" });
+        console.log(error.message);        
+},
+  });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    mutation.mutate(data);
   });
-// mutation.mutate
+// 
   return (
     <form className="flex flex-col gap-5" onSubmit={onSubmit}>
         

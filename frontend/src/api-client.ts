@@ -17,10 +17,11 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 //     throw new Error("Error fetching user");
 //   }
 //   return response.json();
-// };
-
+// };http://localhost:7000
+// 
 export const register = async (formData: RegisterFormData) => {
   const response = await fetch(`${API_BASE_URL}/api/users/register`, {
+
     method: "POST",
     credentials: "include",
     headers: {
