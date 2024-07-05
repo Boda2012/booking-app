@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/users";
 import authRoutes from "./routes/auth";
 import cookieParser from "cookie-parser";
-// import path from "path";
+import path from "path";
 // import { v2 as cloudinary } from "cloudinary";
 // import myHotelRoutes from "./routes/my-hotels";
 // import hotelRoutes from "./routes/hotels";
@@ -31,7 +31,7 @@ app.use(cors({
   
 
 
-// app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
@@ -42,10 +42,7 @@ app.use("/api/users", userRoutes);
 // app.get("*", (req: Request, res: Response) => {
 //   res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
 // });
-// app.get("/api/test", async (req: Request, res: Response) => {
-//     res.json({message: "It is a      L i v e ! ! ! api/test endpoint"});
-    
-// })
+
 
 app.listen(7000, () => {
   console.log("server running on localhost:7000");
