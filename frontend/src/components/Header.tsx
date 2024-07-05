@@ -12,7 +12,7 @@ const Header = () => {
           <Link to="/">MernHolidays.com</Link>
         </span>
         <span className="flex space-x-2">
-        <Link
+        {/* <Link
                 className="flex items-center text-white px-3 font-bold hover:bg-blue-600"
                 to="/my-bookings"
               >
@@ -23,7 +23,7 @@ const Header = () => {
                 to="/my-hotels"
               >
                 My Hotels
-              </Link>
+              </Link> */}
               <Link
               to="/sign-in"
               className="flex bg-white items-center text-blue-600 px-3 font-bold hover:bg-gray-100"

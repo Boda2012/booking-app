@@ -5,6 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
+import Register from "./pages/Register";
 // import Layout from "./layouts/Layout";
 // import Register from "./pages/Register";
 // import SignIn from "./pages/SignIn";
@@ -37,6 +38,14 @@ const App = () => {
             <Layout>
             Search Page
           </Layout>
+          }
+        />
+         <Route
+          path="/register"
+          element={
+            <Layout>
+              <Register />
+            </Layout>
           }
         />
       {/* <Routes>
