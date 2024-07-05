@@ -6,9 +6,7 @@ import {
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import Register from "./pages/Register";
-// import Layout from "./layouts/Layout";
-// import Register from "./pages/Register";
-// import SignIn from "./pages/SignIn";
+import SignIn from "./pages/SignIn";
 // import AddHotel from "./pages/AddHotel";
 // import { useAppContext } from "./contexts/AppContext";
 // import MyHotels from "./pages/MyHotels";
@@ -48,6 +46,14 @@ const App = () => {
             </Layout>
           }
         />
+         <Route
+          path="/sign-in"
+          element={
+            <Layout>
+              <SignIn />
+            </Layout>
+          }
+        />
       {/* <Routes>
         <Route
           path="/"
@@ -73,22 +79,8 @@ const App = () => {
             </Layout>
           }
         />
-        <Route
-          path="/register"
-          element={
-            <Layout>
-              <Register />
-            </Layout>
-          }
-        />
-        <Route
-          path="/sign-in"
-          element={
-            <Layout>
-              <SignIn />
-            </Layout>
-          }
-        /> */}
+      
+        */}
 
         {/* {isLoggedIn && (
           <>

@@ -1,5 +1,5 @@
 import { RegisterFormData } from "./pages/Register";
-// import { SignInFormData } from "./pages/SignIn";
+import { SignInFormData } from "./pages/SignIn";
 // import {
 //   HotelSearchResponse,
 //   HotelType,
@@ -37,22 +37,22 @@ export const register = async (formData: RegisterFormData) => {
   }
 };
 
-// export const signIn = async (formData: SignInFormData) => {
-//   const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
-//     method: "POST",
-//     credentials: "include",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(formData),
-//   });
+export const signIn = async (formData: SignInFormData) => {
+  const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
 
-//   const body = await response.json();
-//   if (!response.ok) {
-//     throw new Error(body.message);
-//   }
-//   return body;
-// };
+  const body = await response.json();
+  if (!response.ok) {
+    throw new Error(body.message);
+  }
+  return body;
+};
 
 export const validateToken = async () => {
   const response = await fetch(`${API_BASE_URL}/api/auth/validate-token`, {
